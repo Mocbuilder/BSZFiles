@@ -1,0 +1,4 @@
+- BIOS = Basic I/O System (Einfaches Eingabe/Ausgabe System)
+- UEFI = Unified Extensible Firmware Interface (Einheitliche Erweiterbare Firmwareschnittstelle)
+
+- Anschalten -> Selbsttest -> Bootloader finden -> Bootloader ausführen
