@@ -1,0 +1,18 @@
+Die Grundarchitektur fast jedes Computers basiert auf der "Programm-Speicher"
+Architektur vom Mathematiker John von Neumann aus dem Jahr 1945.
+
+Er beschrieb eine Computer-Architektur bei welcher Informationen und Funktionen im
+Speicher gespeichert werden. Eine Kontrolleinheit (Control Unit) mit einem
+Program-Zähler und einem Funktions-Register, welche Teile der im Arbeitsspeicher
+gespeicherten Daten lädt. Dann interpretiert es die Daten mithilfe eines Funktions-
+satzes, um herauszufinden ob es eine Funktion oder Information ist. Ist es eine
+Funktion, führt es diese aus.
+
+Eine Funktion könnte z.B. zwei Datenteile zusammen zu fügen. In diesem Fall würde
+die Kontrolleinheit die beiden Datenteile laden und sie in Register und
+in die Arithmetisch-Logische-Einheit zu bringen. Dann sendet sie ein ein 
+Kontrollsignal an die ALU wodurch diese die beiden Datenteile im Register zusammen fügt
+und speichert das Ergebniss im Register.
+
+Eine darauf folgende Funktion könnte beispielsweise das im ALU-Register
+gespeicherte Ergebniss ins RAM zu verschieben. Andere Funktionen 
