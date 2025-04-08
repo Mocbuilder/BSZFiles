@@ -1,18 +1,29 @@
 Die Grundarchitektur fast jedes Computers basiert auf der "Programm-Speicher"
 Architektur vom Mathematiker John von Neumann aus dem Jahr 1945.
 
-Er beschrieb eine Computer-Architektur bei welcher Informationen und Funktionen im
+Er beschrieb eine Computer-Architektur bei welcher Informationen und Befehls im
 Speicher gespeichert werden. Eine Kontrolleinheit (Control Unit) mit einem
-Program-Zähler und einem Funktions-Register, welche Teile der im Arbeitsspeicher
-gespeicherten Daten lädt. Dann interpretiert es die Daten mithilfe eines Funktions-
-satzes, um herauszufinden ob es eine Funktion oder Information ist. Ist es eine
-Funktion, führt es diese aus.
+Program-Zähler und einem Befehls-Register, welche Teile der im Arbeitsspeicher
+gespeicherten Daten lädt. Dann interpretiert es die Daten mithilfe eines Befehls-
+satzes, um herauszufinden ob es eine Funktion oder Information ist. Ist es eins
+Befehl, führt es diese aus.
 
-Eine Funktion könnte z.B. zwei Datenteile zusammen zu fügen. In diesem Fall würde
-die Kontrolleinheit die beiden Datenteile laden und sie in Register und
+Ein Befehl könnte z.B. sein, zwei Datenteile zusammen zu fügen. In diesem Fall würde
+die Kontrolleinheit die beiden Datenteile laden und sie ins Register und
 in die Arithmetisch-Logische-Einheit zu bringen. Dann sendet sie ein ein 
 Kontrollsignal an die ALU wodurch diese die beiden Datenteile im Register zusammen fügt
 und speichert das Ergebniss im Register.
+ 
+Eine darauf folgende Funktion könnte beispielsweise das im ALU-Register gespeicherte 
+Ergebniss ins RAM zu verschieben. Andere Funktionen welche aus dem Arbeitsspeicher
+geladen werden, könnten z.B. Daten von einem Eingabegerät holen, oder sie an Ausgabegeräte
+weitergeben.
 
-Eine darauf folgende Funktion könnte beispielsweise das im ALU-Register
-gespeicherte Ergebniss ins RAM zu verschieben. Andere Funktionen 
+Oben wird gezeigt wie die Stored Program Architecture sich in ein System mit einem einzigen
+Bus entwickelt hat. Dies macht das System praktischer aus der Sicht der physischen
+Konstruktion, hält es aber davon ab gleichzeitig Befehle und Daten auslesen.
+Dieses Problem wird der Von-Neumann Flaschenhals genannt.
+
+Eine Lösung ist es, den Speicher in Befehls- und Datenspeicher zu teilen. 
+Dies erlaubt es der CPU beides gleichzeitig auszulesen.
+
