@@ -1,0 +1,4 @@
+- heizmann24.de
+- davon datenbanksystem erstellen
+- 10 gruppen a 5 produkte
+- evt. bilder von produkt in db speichern
