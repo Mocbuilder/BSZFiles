@@ -1,0 +1,14 @@
+##Geschäftsbriefe
+- nach DIN 5008
+
+##Mängelrüge
+Die Mängelrüge ist eine Anzeige durch den Käufer eines Handelsgeschäftes, durch die dem Verkäufer ein Mangel 
+oder die Falschlieferung der Ware gemeldet wird. Im Sinne des § 377 Handelsgesetzbuch muss die Ware unverzüglich 
+nach Erhalt durch den Käufer untersucht und etwaige Mängel unverzüglich beanstandet werden. 
+Dabei kann die Mängelrüge formlos erfolgen und hat die Rückabwicklung des Kaufgeschäftes, den Umtausch 
+oder die Gewährung einer anderweitigen Kompensation für den Käufer zur Folge.
+
+-Ziele:
+- Käufer kann mangelnde Wahre zurückgeben
+- Verkäufer wird unverzüglich über Manel informiet
+- Schnelle und einfache Abwicklung von Handelskäufen wird gefördert

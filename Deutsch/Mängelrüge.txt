@@ -1,0 +1,9 @@
+##Struktur##
+1. Textabschnitt
+Wann bestellt, wann erhalten, sofort überprüft, Grund der Mängelrüge
+
+2. Textabschnitt
+Genaue Beschreibung der Mängel
+
+3. Textabschnitt
+Wie erfolgt Abwicklung, welche Art der Nacherfüllung, Fristensetzung, Benennung beruflicher Gründe (optional)

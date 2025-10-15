@@ -1,0 +1,10 @@
+CREATE TABLE
+- wenn ein feldname nicht alphanumerische zeichen enthält dann muss der name in [] gefasst werden
+- feldlänge standardmäßig 255, sollte aber als best practice immer definiert werden
+- feld kann als NOT NULL deklariert werden
+
+CREATE TABLE 'Test'(
+'TestFeld1' int 		not_null auto_increment primary key,
+'TestFeld2' string		not null
+);
+ 

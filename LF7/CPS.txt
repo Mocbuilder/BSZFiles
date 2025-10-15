@@ -1,0 +1,15 @@
+### CPS - Cyberphysische Systeme###
+## Steuerung ##
+- gezielte Beeinflussung eines #technischen Systems#(nach gegebenen Gesetzmäßigkeiten)
+  um dadurch einen #technischen Prozess# voranzutreiben bzw. abzuarbeiten
+Bsp.: Jalousie A2112
+
+## Blockschaltbild ##
+Steuerlogik			 → Realisierungs / Programmiercode
+↓
+Steuereinrichtung	y→ Steuerstrecke / Stellgröße x→ →
+↓												   ↓
+bei uns CPS
+
+### Regelung ###
+Definition: 1zu1 wie bei Steuerung ABER: 

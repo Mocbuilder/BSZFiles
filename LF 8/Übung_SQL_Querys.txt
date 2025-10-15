@@ -1,0 +1,64 @@
+CREATE DATABASE fi24_test;
+
+CREATE TABLE fi24_test.Auto (
+    ID_A			INTEGER		AUTO_INCREMENT NOT NULL PRIMARY KEY,
+   	Hersteller		VARCHAR(15)	NOT NULL,
+    Typ				VARCHAR(15) NOT NULL,
+    Farbe			VARCHAR(15) NOT NULL,
+    Baujahr			DATE		NOT NULL,
+    Preis			DECIMAL(7,2)NOT NULL,
+    Tuev			DATE		NOT NULL,
+    Haftpflicht		DECIMAL(5,2)NOT NULL,
+    Vollkasko		DECIMAL(5,2)NOT NULL,
+    KFZSteuer		DECIMAL(5,2)NOT NULL,
+    allgZustand		VARCHAR(50)	NOT NULL,
+    Kennzeichen		VARCHAR(10)	NOT NULL
+);
+INSERT INTO fi24_test.Auto
+(Hersteller, Typ, Farbe, Baujahr, Preis, Tuev, Haftpflicht, Vollkasko, KFZSteuer, allgZustand, Kennzeichen)
+VALUES(
+   "Opel", "Astra", "Blau", "2017-06-20", "2300.00", "2025-06-05", "560.00", "730.00", "480.00", "guter Zustand", "M-HL 104" 
+);
+
+DROP TABLE fi24_test.Auto;
+
+CREATE TABLE fi24_test.Mitarbeiter (
+    ID_M			INTEGER		AUTO_INCREMENT NOT NULL PRIMARY KEY,
+   	Anrede			VARCHAR(15)	NOT NULL,
+    Name			VARCHAR(15) NOT NULL,
+    Vorname			VARCHAR(15) NOT NULL,
+    Abteilung		VARCHAR(25)	NOT NULL,
+    Tel_dienst		INTEGER(3)	NOT NULL,
+    Tel_privat		VARCHAR(15) NOT NULL
+);
+
+INSERT INTO fi24_test.Mitarbeiter
+(Anrede, Name, Vorname, Abteilung, Tel_dienst, Tel_privat)
+VALUES (
+    "Herr", "Richter", "Hans-Otto", "Kundenberater", "334", "02367/34567"
+    );
+    
+DROP TABLE fi24_test.Mitarbeiter;
+
+CREATE TABLE fi24_test.Autonutzung (
+    ID_AN			INTEGER		AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	FS_M			INTEGER NOT NULL,
+    FS_A			INTEGER NOT NULL,
+    Tag				DATE NOT NULL,
+    km_beginn		INTEGER NOT NULL,
+    km_ende			INTEGER NOT NULL
+);
+
+INSERT INTO fi24_test.Autonutzung
+(FS_M, FS_A, Tag, km_beginn, km_ende)
+VALUES
+    ( "3", "3", "2024-10-1", "2111", "2222" ),
+    ( "3", "4", "0000-00-00", "0000", "7734" );
+
+SELECT * FROM fi24_test.Autonutzung;
+
+SELECT * FROM fi24_test.Autonutzung WHERE FS_M = 3;
+
+SELECT * FROM fi24_test.Autonutzung WHERE FS_A = 4;
+
+DROP TABLE fi24_test.Autonutzung;

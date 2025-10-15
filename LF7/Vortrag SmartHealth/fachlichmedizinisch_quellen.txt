@@ -1,0 +1,4 @@
+[au druck ccnet] https://www.ti-score.de/media/gematik/_processed_/5/8/csm_eAU-Anlage_20220614_i-SOLUTIONS_ClinicCentre_410699eb75.png
+[davinci-system] https://isi-static.imgix.net/de-de/-/jssmedia/ISI/Intuitive/Images/Davinci/davinci-xi-surgical-system.jpg?h=600&iar=0&w=541&hash=DF40D28086CA7FBC4108441A249754E4
+[patmonitoring] https://www.gehealthcare.in/-/jssmedia/global/products/images/patient-monitoring/1-redesign-images/patient-monitors/carescape-one/carescape-one-cs-one.jpg?h=500&iar=0&w=900&rev=-1&hash=1F4287D9427704EA7E61F2864940ECD1
+[langzeitüberwachung] https://www.diabetes.help/wp-content/uploads/2019/10/blutzucker-messen-arm-1200.jpg
