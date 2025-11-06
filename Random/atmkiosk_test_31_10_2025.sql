@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2025 at 12:35 AM
+-- Generation Time: Oct 31, 2025 at 04:13 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -27,14 +27,11 @@ SET time_zone = "+00:00";
 -- Table structure for table `accounts`
 --
 
-CREATE DATABASE IF NOT EXISTS `atmkiosk_test`;
-USE `atmkiosk_test`;
-
-
 CREATE TABLE `accounts` (
   `U_ID` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
+  `cardnumber` varchar(255) NOT NULL,
   `hash` varbinary(64) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `balance` decimal(15,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -42,8 +39,8 @@ CREATE TABLE `accounts` (
 -- Dumping data for table `accounts`
 --
 
-INSERT INTO `accounts` (`U_ID`, `username`, `hash`, `balance`) VALUES
-(1, '1', 0x938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4, 0.00);
+INSERT INTO `accounts` (`U_ID`, `cardnumber`, `hash`, `name`, `balance`) VALUES
+(1, '1', 0x938db8c9f82c8cb58d3f3ef4fd250036a48d26a712753d2fde5abd03a85cabf4, '', 0.00);
 
 -- --------------------------------------------------------
 
@@ -53,7 +50,7 @@ INSERT INTO `accounts` (`U_ID`, `username`, `hash`, `balance`) VALUES
 
 CREATE TABLE `admin_users` (
   `uadmin_id` int(11) NOT NULL,
-  `username` varchar(35) NOT NULL,
+  `username` varchar(255) NOT NULL,
   `hash` varbinary(64) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 

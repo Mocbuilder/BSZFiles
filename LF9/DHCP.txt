@@ -1,0 +1,17 @@
+## DHCP ##
+Dynamic Host Configuration Protocoll
+- IP Adresse
+- Netzwerkmaske
+- DNS-Server
+- Lease-Gültigkeitsdauer
+- Standard-Gateway
+
+# Ablauf #
+- (Server) DHCP-Discover
+- (Server) DHCP-Offer
+- (Client) DHCP-Request
+- (Server) DHCP Pack
+=> Wenn fehlgeschlagen: Client kriegt 169.254.*.* Adresse
+
+Konfiguration IPv6
+- SLAAC (Stateless Adress Autoconfiguration)

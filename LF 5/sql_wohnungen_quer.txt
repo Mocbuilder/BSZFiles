@@ -1,0 +1,62 @@
+CREATE DATABASE FI24_DB_Mietvertrag;
+USE FI24_DB_Mietvertrag;
+
+CREATE TABLE Mieter (
+    M_ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    Vorname VARCHAR(255),
+    Nachname VARCHAR(255),
+    GebDat DATE,
+    GebOrt VARCHAR(255)
+);
+
+CREATE TABLE Gebäude (
+    G_ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    Stadt VARCHAR(255),
+    Straße VARCHAR(255),
+    H_NR VARCHAR(255)
+);
+
+CREATE TABLE Wohnungen (
+    W_ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    G_ID INT NOT NULL,
+    Etage VARCHAR(255),
+    M_ID INT NULL,
+    
+    FOREIGN KEY (G_ID) REFERENCES Gebäude(G_ID),
+    FOREIGN KEY (M_ID) REFERENCES Mieter(M_ID)
+);
+
+CREATE TABLE Mietvertrag (
+    V_ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    M_ID INT NOT NULL,
+    G_ID INT NOT NULL,
+    W_ID INT NOT NULL,
+    DatumAB DATE,
+    
+    FOREIGN KEY (M_ID) REFERENCES Mieter(M_ID),
+    FOREIGN KEY (G_ID) REFERENCES Gebäude(G_ID),
+    FOREIGN KEY (W_ID) REFERENCES Wohnungen(W_ID)
+);
+
+CREATE TABLE Zahlung (
+    Z_ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    V_ID INT NOT NULL,
+    Betrag DECIMAL(10,2) NOT NULL,
+    Zahlungsdatum DATE NOT NULL,
+    Zahlungsart ENUM('Überweisung', 'Bar', 'Lastschrift') DEFAULT 'Überweisung',
+    Verwendungszweck VARCHAR(255),
+    
+    FOREIGN KEY (V_ID) REFERENCES Mietvertrag(V_ID)
+);
+
+CREATE TABLE Nebenkosten (
+    N_ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    V_ID INT NOT NULL,
+    AbrechnungszeitraumVon DATE,
+    AbrechnungszeitraumBis DATE,
+    Betrag DECIMAL(10,2),
+    Beschreibung VARCHAR(255),
+    Abrechnungsdatum DATE DEFAULT CURRENT_DATE,
+    
+    FOREIGN KEY (V_ID) REFERENCES Mietvertrag(V_ID)
+);
