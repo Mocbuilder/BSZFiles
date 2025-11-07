@@ -15,3 +15,12 @@ Dynamic Host Configuration Protocoll
 
 Konfiguration IPv6
 - SLAAC (Stateless Adress Autoconfiguration)
+
+# Router #
+Router => beinhaltet: 
+- router
+- gateway
+- dhcp
+- modem
+- nas
+- switch
