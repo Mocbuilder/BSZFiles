@@ -1,4 +1,3 @@
-#FI24_Projekt_1 Aufgb. 1
 from machine import Pin, ADC, SoftI2C
 import ssd1306
 from time import sleep
@@ -20,7 +19,7 @@ def display_temp_leds(temp):
         Pin(12, Pin.OUT).value(1)
     elif temp >= 25 and temp < 30:
         Pin(13, Pin.OUT).value(1)
-    elif temp >= 20:
+    elif temp <= 25:
         Pin(14, Pin.OUT).value(1)
     else:
         oled.fill(0)
