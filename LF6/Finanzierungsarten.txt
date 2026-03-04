@@ -13,5 +13,5 @@
 
 ## Darlehen ##
 - Festdarlehen/Fälligkeitsdarlehen => Einmalige Tilgung, Wird am Ende inkl. Zinsen bezahlt
-- Annuitätendarlehen => Tilgungsanteil erhöht und Zinsanteil veringert sich jede Zahlungsperiode
+- Annuitätsdarlehen => Tilgungsanteil erhöht und Zinsanteil veringert sich jede Zahlungsperiode
 - Abzahlungsdarlehen => Tilgungsanteil ist immer gleich, aber Zinsen werden weniger da Tilgungsdürftiger Teil jede Periode weniger wird
