@@ -1,0 +1,15 @@
+Entgeltliche Nutzungsübertragung eines Wirtschaftsgutes auf Zeit. Der Leasingnehmer verzichtet auf den Eigenerwerb und zahlt einen Mietzins, die Leasingrate, an den Lieasinggeber.
+
+## Leasingarten
+=> Direktes & indirektes Leasing (Direkt bei Hersteller oder per Leasinggesellschaft/dritter Leasinganbieter)
+
+### Operate Leasing
+- Gut wird kurzzeitig verleast
+- am Ende der Laufzeit Rückgabe
+-> an weiteren Leasingnehmer weiterverleast
+- geeignet für Güter, die nur über eine kurze Zeitdauer benötigt werden
+
+### Finance Leasing
+- Leasingdauer bis zu 90% der Nutzungsdauer des Leasinggutes -> i.d.R. nur ein einziger Leasingnehmer
+- Am ende der Laufzeit Gegenstand zurückgeben oder Anschlussleasing (neueres Modell) starten, oder Leasinggegenstand Restwert verkaufen (Eigentumserwerb)
+- Kündigung während der Grundmietzeit nicht möglich
