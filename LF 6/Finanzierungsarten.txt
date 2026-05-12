@@ -1,0 +1,17 @@
+### Finanzierungsarten ###
+
+## Eigenfinanzierung ##
+- Einlagen- oder Beteiligungsfinanzierung (Aussenfinanzierung)
+- Finanzierung aus einbehaltenen Gewinnen (Innenfinanzierung)
+
+## Fremdfinanzierung ##
+- Finanzierung aus Rückstellungsgegenwerten (Aussenfinanzierung)
+- Kreditfinanzierung (Innenfinanzierung)
+
+
+### Kreditfinanzierung (Darlehensformen) ###
+
+## Darlehen ##
+- Festdarlehen/Fälligkeitsdarlehen => Einmalige Tilgung, Wird am Ende inkl. Zinsen bezahlt
+- Annuitätsdarlehen => Tilgungsanteil erhöht und Zinsanteil veringert sich jede Zahlungsperiode
+- Abzahlungsdarlehen => Tilgungsanteil ist immer gleich, aber Zinsen werden weniger da Tilgungsdürftiger Teil jede Periode weniger wird

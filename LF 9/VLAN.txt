@@ -1,0 +1,16 @@
+# VLAN
+- Virtual Local Area Network
+- teilt LAN in logische Segmente auf und bildet eigene Broadcast-Domäne
+- Merkmale:
+	- Geräte innerhalb eines VLANs können untereinander komunizierend
+	- Kommunikation zwischen VLANs erfordert Firewall mit freigabe
+	
+## Vorteile von VLANs
+- Hardware
+	- Trennung von Netzwerken ohne zusätzliche physische Hardware und einfache Skalierbarkei
+
+- Broadcast
+	- Verringerung des Broadcast-Headers in großen Netzwerken
+	
+- Sicherheit
+	- Verbesserung der Netzwerksicherheit duch Einteilung z.B. zwischne Unternehmen

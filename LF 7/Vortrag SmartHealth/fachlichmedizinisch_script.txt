@@ -1,0 +1,33 @@
+### Robotik in der Medizin
+	- In der Chirugie z.b. bei Operationen
+	- bessere Präzision, kleinere Schnittfläche
+### - bsp. da-vinci-Robotersysteme aus USA
+	- haben gut prezision, aber gewissen marge an todesfällen und sind sehr teuer 
+[bild von davinci-system] 
+[Quelle: Hersteller Intuitive https://www.intuitive.com/de-de/products-and-services/da-vinci]
+[Quelle: CNBC https://www.intuitive.com/de-de/products-and-services/da-vinci]
+
+
+[Quelle für alles ab hier ist eigene Erfahrung]
+	Patientenmonitoring hat zwei teile:
+### Im Krankenhaus:
+	- Komplettüberwachung von Vitalwerten 
+	- diese werden an ein zentrales überwachungssystem (meist pro station) gessendet 
+	und am schwesterndienstplatz sowie auf smartphone dargestellt
+	- Vorkomnisse/Besonderheiten von Messdaten werden gespeichert und können so auch 
+	in das KIS übertragen werden.
+[Bild von PatMonitoring]
+
+### KIS
+	- Krankenhausinformationssystem
+	- zentrales system welches das verwalten von patienten auf station/in der sprechstunde,
+	über patientendatensammlung mit EPA einbindung bis hin zu direkter befundung im program durch ärzte
+	- Meist Modular aufgebaut, um dann je nach nutzer z.b. die monitoring daten für einen patienten anzuzeigen
+### -bei mir im KOB Zi/EB/WW wird das Cliniccentre von Mesalvo verwendet
+[bild von au-ausdruck ccnet]
+
+## Langzeitüberwachung
+	- patient wird entlassen und hat z.b. ein Blutzuckermessgerät o.ä.
+	- gerät schickt per app auf dem Handy daten zurück an die behandelden ärzte welche 
+	diese dann auswerten
+[bild von langzeitüberwachung]

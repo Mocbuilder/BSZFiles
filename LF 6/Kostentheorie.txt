@@ -1,0 +1,49 @@
+###### Kostentheorie ######
+## Grundbegriffe ##
+1. Aufwendung
+Jede Wertminderung (in Geld ausgedrückt)
+
+2. Erträge
+Jeder Wertzuwachs (in Geld ausgedrückt)
+
+3. Kosten
+Betriebszweckbezogene Wertminderung
+
+4. Erlöse
+Betriebszweckbezogener Wertzuwachs
+
+## Kosten in Abhängigkeit vom Beschäftigkeitsgrad ##
+a) Fixkosten
+b) Sie fallen unabhängig von der Höhe des Beschäfftigungsgradses (Produktionsmenge) an, also auch, wenn die Produktion stillsteht.
+
+- Fixe Stückkosten
+- Bei steigender produktion sinkt der Fixkostenanteil pro Stück, daa sich die konstanten Fixkosten auf die größere Stückzahl verteilen (Kostendegression).
+
+- variable Kosten
+- Sie sind abhängig vom Beschäftigungsgrad (Produktionsmenge). Das heißt, je mehr Stück eines Gutes ein Unternehmen produziert, desto mehr variable Kosten fallen an.
+
+- variable Gesamtkosten
+- mit zunehmender Produktion werden var. Gesamtk. Mehr
+
+- variabe stückkosten
+- teilt man die gesamtkosten durch die stückzahlenm erhält man die veriabken stückkosten
+
+Kg = Gesamt
+Kf = fixkosten
+Kv = variable kosten
+
+Kg = Kf + Kv
+
+Gesamt-Stückkosten = Fixstückkosten + VarStückKosten
+
+k(stück) = Kf/x + Kv/x == Gesetz der Massenproduktion
+
+## Lineare Erlösfunktion ##
+- Der Erlös/Ertrag eines Unternehmens erechnet sich aus der Verkauften Stückzahl x multoploziert mit dem Verkaufspreis pro Stück p.
+=> E = x * p
+
+## Betriebsgewinn ##
+Gewinn = Erlöse/Umsatz - Kosten
+
+Erlöse = Stückzahl * Preis je Stückkosten
+Kosten = Variable Stückkosten * Stückzahl + Gesamtfixe kosten
