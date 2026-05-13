@@ -95,6 +95,9 @@
 <a href="#5-4-übertragen">5.4 Datenübertragung zu MQTT-Broker</a><br>
 </li>
 <li>
+<a href="#Begriffe">Begriffserklärungen</a>    
+</li>
+<li>
 <a href="#gesamter-programmcode">Gesamter Programmcode</a>
 </li>
 <li>
@@ -5654,7 +5657,7 @@ OjU2KzAwOjAwQhtGTwAAAABJRU5ErkJggg==" />
 <hr>
 <h1 id="implementierung--programmcode">5. <strong>Implementierung &amp; Programmcode</strong></h1>
 <p>Die Implementierung erfolgte in <strong>MicroPython</strong>.<br>
-Alle Libraries sind standardmäßig Teil von MicroPython,<br></p>
+Alle Libraries sind standardmäßig Teil von MicroPython.<br></p>
 <h2 id="5-1-client">5.1 <strong>Client konfigurieren</strong></h2>
 <p>Bevor Verbindungen hergestellt werden können muss ein MQTT-Client konfiguriert werden. Dabei wird die Broker-URL, Client-ID, Login-Daten sowie das MQTT-Topic angegeben. Beim erstellen eines Topic-Namens ist auf Namenskonventionen zu achten (z.B. keine Umlaute etc.) um Probleme zu vermeiden.</p>
 <pre><code>
@@ -5668,13 +5671,14 @@ topic = "Met/FI/Floeter"
 <p>Eine weitere Vorraussetzung ist eine Internet-Verbindung. Für das Projekt wurde ein Smartphone-Hotspot als WLan-Accesspoint genutzt. Die Klassen stammen aus der in Python integrierten Network-Library.</p>
 <pre><code>
 def try_connect_wifi():
-    wlan = network.WLAN()
     wlan.active(True)
-    wlan.connect([Netzwerkname], [Netzwerkpasswort])
+    wlan.connect([SSID], [Passwort])
+    while not wlan.isconnected():
+        print("Wlan is not connected...")    
     return wlan.isconnected()
 </code></pre>
 <h2 id="5-3-verbindenmqtt">5.2 <strong>Verbindung zum MQTT-Broker herstellen</strong></h2>
-<p>Um sich mit dem MQTT-Broker zu verbinden, werden dem Client die Konfiguration übergeben. Die Klassen stammen aus der umqtt.simple-Library welche zur Micropython-Installation dazugehört.</p>
+<p>Um sich mit dem MQTT-Broker zu verbinden, wird dem Client die Konfiguration übergeben. Die Klassen stammen aus der umqtt.simple-Library welche zur Micropython-Installation dazugehört.</p>
 <pre><code>
 def connectMQTT():
     print('Connected to MQTT Broker "%s"' % (server))
@@ -5689,8 +5693,7 @@ client.connectMQTT()
 [...]
 client.publish(topic, json_results, qos=0)
 </code></pre>
-Die Variable <code>qos</code> steht für "Quality of Service" und bezeichent die Sicherheit der Übertragung. Level 0 ist "Fire-and-Forget" wobei die Nachricht einmal ohne Handshake gesendet wird, während die Level 1 und 2 Handshakes integrieren und die Nachricht ggfs. so lange wiederholt senden bis eine Antwort gesendet wird.
-
+<hr>
 <h2 id="5-5-übertragen">5.5 <strong>Parsen JSON zu JS-Objekt in NodeRed</strong></h2>
 <p>Damit die Daten auf dem NodeRed-Dashboard angezeigt werden können, müssen sie von JSON zu JS-Objekten umgewandelt werden. Dies wird automatisch in einer JSON-Node mit der Einstellung "Always Convert to JS Object" gemacht.</p>
 <p>Die JS-Objekte werden dann an mehrere JS-Skripte geschickt welche sich die jeweils gewollten Daten aus dem MSG-Objekt extrahieren.</p>
@@ -5712,7 +5715,58 @@ else{
 return msg
 </code></pre>
 <hr>
-<h1 id="gesamter-programmcode">6. <strong>Gesamter Programmcode</strong></h1>
+<h1 id="Begriffe">6. <strong>Begriffserklärungen</strong></h1>
+<h2>MQTT-Protokoll</h2>
+<ol>
+    <li>
+        <h3>MQTT-Broker</h3>
+        <p>MQTT-Broker beschreibt den zentralen Vermittlungspunkt zwischen Clients eines MQTT-Systems, über den alle Subscribe- und Publish-Aktionen laufen.</p>
+    </li>
+    <li>
+        <h3>MQTT-Client</h3>
+        <p>MQTT-Client bezeichnet jedes Gerät welches Nachrichten an ein MQTT-System sendet/published und/oder subscribed um sie zu erhalten.</p>
+    </li>
+    <li>
+        <h3>MQTT-Topic</h3>
+        <p>MQTT-Topics sind UTF-8-Zeichenketten, die als hierarchische Adressen für Nachrichten im MQTT-Protokoll dienen. Sie strukturieren IoT-Daten ähnlich einem Dateisystem, getrennt durch Schrägstriche (/), z.B. "haus/wohnzimmer/temperatur". Topics ermöglichen das Publish/Subscribe-Modell, wobei Clients spezifische Topics abonnieren, um Nachrichten vom Broker zu empfangen.</p>
+        <p>Topics müssen außerdem nicht explizit erstellt werden, sondern entstehen automatisch beim ersten Publish. Der Topic-Name ist außerdem Case-Sensitive, und der Präfix <code>$</code> ist nicht erlaubt, da er Systeminfos vom Broker markiert.</p>
+    </li>
+    <li>
+        <h3>Topic-Wildcards</h3>
+        <p>Topic-Namen können außerdem Wildcards enthalten. <code>+</code> bezeichnet ein Single-Level-Übergang im Topic Namen. Der Name "Haus/+/Temperatur" bezeichnet also "Haus/Raum1/Temperatur" als auch "Haus/Raum2/Temperatur".</p>
+        <p><code>#</code> hingegen ist ein Multi-Level-Übergang. Der Name "Haus/#" bezeichnet also alle Topics welche mit "Haus" beginnen.</p>
+    </li>
+    <li>
+        <h3>Quality of Service (QoS)</h3>
+        <p>QoS in MQTT besteht aus 3 Leveln (0-1), und bezeichnet die Stabilität/Verlässlichkeit der Übertragung von Nachrichten. Level 0 ist "Fire-and-Forget", der Client schickt die Nachricht also und löscht diese ohne auf Antwort zu warten.</p>
+        <p>Level 1 hingegen speichert die Nachricht bis eine Antwort erhalten wird. Dies sichert die Übertragung, kann allerdings zu duplizierten Nachrichten beim Broker führen.</p>
+        <p>Level 2 integriert einen 4-Weg-Handshake um sicherzustellen das die Nachricht genau einmal an den Broker geschickt wird und aber auch dort ankommt.</p>
+        <p>In der Integrierung von MQTT in den ESP32 wurde QoS 0 gewählt, da eine 100% Übertragungssicherheit nicht nötig ist, duplizierte Daten allerdings die Darstellungen verfälschen würde.</p>
+    </li>
+    <li>
+        <h3>MQTT Will Message</h3>
+        <p>Die Will-Message ist eine normale MQTT-Nachricht welche ein Client beim ersten Verbinden mit dem Broker spezifizieren kann. Sollte der Client unerwartet die Verbindung trennen wird diese Nachricht gesendet. So können andere Clients über den Verbindungsabbruch informiert werden.</p>
+    </li>
+    <h2>Verbindungsmanagement Client-Server</h2>
+    <li>
+        <h3>Retained Messages</h3>
+        <p>Retained Messages sind MQTT-Nachrichten welche mit der <code>--retained</code> flag gekenzeichnet wurden. Der Server speichert diese, und jeder Client welche sich neu mit dem Topic verbindet erhält diese, ohne erst auf neue Updates warten zu müssen.</p>
+    </li>
+    <li>
+        <h3>Persistent Sessions</h3>
+        <p>Bei einer Persistent (bestehende) Session speichert der Server wichtige Verbindungsdetails und noch zuzustellende Nachrichten für einen Client, damit dieser bei der erneuten Verbindung ohne unterbrechung die vorherige Session fortsetzen kann.</p>
+    </li>
+    <li>
+        <h3>Keep Alive</h3>
+        <p>Keep Alive ist ein System indem sich Client und Server auf einen Zeitraum einigen, welcher als Puffer zwischen Nachrichten dient. Der Client sendet also nach jedem Intervall eine Nachricht oder ein Ping-Packet, und der Serve antwortet zeitgemäß. Wenn eine Seite keine Nachricht innerhalb des verhandelten Intervalls erhält, wird die TCP-Verbindung als Halb-Offen oder andernweitig gestört markiert und daher geschlossen. Eine Halb-Offene TCP-Verbindung ist eine Verbindung welche nur auf einer Seite geschlossen wurde.</p>
+    </li>
+    <li>
+        <h3>Web Sockets Transport</h3>
+        <p>Bei WST werden MQTT-Packete in Web Socket Frames eingeschlossen, um sie über TCP auch an Browser-basierte Anwendungen (Dashboards, etc.) liefern zu können, da Browser meist Limitationen bezüglich Raw Web Sockets haben.</p>
+    </li>
+</ol>
+<hr>
+<h1 id="gesamter-programmcode">7. <strong>Gesamter Programmcode</strong></h1>
 <p>Der vollständige MicroPython-Code (Teil 1, 1.2 und 2):</p>
 <pre><code>
 #FI24_Projekt_ESP32_2
@@ -5731,7 +5785,9 @@ dht22_sensor = DHT22(Pin(19))
 oled_width = 128
 oled_height = 64
 oled = ssd1306.SSD1306_I2C(oled_width, oled_height, SoftI2C(scl=Pin(22), sda=Pin(21)))
+
 wlancon = False
+wlan = network.WLAN()
 
 server="mosquitto.nodered-fi.ipv64.net"
 ClientID = "floeter+2008"
@@ -5746,9 +5802,10 @@ def connectMQTT():
     return client
 
 def try_connect_wifi():
-    wlan = network.WLAN()
     wlan.active(True)
-    wlan.connect([Netzwerkname], [Netzwerkpasswort])
+    wlan.connect([SSID], [Passwort])
+    while not wlan.isconnected():
+        print("Wlan is not connected...")    
     return wlan.isconnected()
 
 def get_lux():
@@ -5796,7 +5853,7 @@ while True:
         oled.text("Wifi connection healthy", 0, 0)
         print("wifi healthy")
         wlancon = True
-        time.sleep(5)
+        time.sleep(2)
         break;
         
     oled.fill(0)
@@ -5835,7 +5892,7 @@ while True:
 
 </code></pre>
 <hr>
-<h1 id="testergebnisse--fazit">9. <strong>Testergebnisse &amp; Fazit</strong></h1>
+<h1 id="testergebnisse--fazit">8. <strong>Testergebnisse &amp; Fazit</strong></h1>
 <h3 id="testergebnisse"><strong>Testergebnisse</strong></h3>
 <p>Die Daten werden korrekt übertragen und dargestellt, siehe:</p>
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="246px" height="729px" viewBox="0 0 246 729" enable-background="new 0 0 246 729" xml:space="preserve">  <image id="image0" width="246" height="729" x="0" y="0"
@@ -6605,7 +6662,7 @@ MjU6NDkrMDA6MDAwdmDiAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDI2LTA1LTExVDA5OjI1OjQ5
 KzAwOjAwZ2NBPQAAAABJRU5ErkJggg==" />
 </svg>
 <h3 id="fazit"><strong>Fazit</strong></h3>
-<p>Die Daten werden korrekt übertragen und dargestellt. Bei der Entwicklung wurden Stackoverflow und die Micropython- bzw. umqtt.simple-Dokumentation benutzt. KI (ChatGPT, Gemini o.ä.) wurde an keinem Punkt benutzt. Es gab keine größeren Probleme, außer mit der Wlan-Verbindung. Diese lässt sich nicht immer beim ersten Versuch verbinden, was aber vermutlich der Network-Library geschuldet ist, da Nutzer online gleiche Probleme damit gemledet haben. Bis jetzt gibts es für diese Probleme keine Lösung, außer die Verbindung erneut zu Versuchen, welche nach einigen Versuchen auch funktionieren sollte.</p>
+<p>Bei der Entwicklung wurden Stackoverflow und die Micropython- bzw. umqtt.simple-Dokumentation benutzt. KI (ChatGPT, Gemini o.ä.) wurde an keinem Punkt benutzt. Es gab keine größeren Probleme.</p>
 </div>
 </body>
 </html>

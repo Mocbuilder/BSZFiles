@@ -14,7 +14,9 @@ dht22_sensor = DHT22(Pin(19))
 oled_width = 128
 oled_height = 64
 oled = ssd1306.SSD1306_I2C(oled_width, oled_height, SoftI2C(scl=Pin(22), sda=Pin(21)))
+
 wlancon = False
+wlan = network.WLAN()
 
 server="mosquitto.nodered-fi.ipv64.net"
 ClientID = "floeter+2008"
@@ -29,9 +31,10 @@ def connectMQTT():
     return client
 
 def try_connect_wifi():
-    wlan = network.WLAN()
     wlan.active(True)
     wlan.connect('Iphone XR', 'FCKBSZWSW')
+    while not wlan.isconnected():
+        print("Wlan is not connected...")    
     return wlan.isconnected()
 
 def get_lux():
@@ -79,7 +82,7 @@ while True:
         oled.text("Wifi connection healthy", 0, 0)
         print("wifi healthy")
         wlancon = True
-        time.sleep(5)
+        time.sleep(2)
         break;
         
     oled.fill(0)
