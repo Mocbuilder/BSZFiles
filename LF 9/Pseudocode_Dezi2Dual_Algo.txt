@@ -1,0 +1,47 @@
+#Stufe 1
+
+dez_input: integer;
+Input(dez_input);
+dual: integer[] = [];
+interval: integer = 0;
+
+while sum != 0
+	do 
+		dual[interval] = input mod 2;
+		input = input div 2;
+		interval++;
+		
+while pos >= 0
+	do
+		Print(dual[interval]);
+		interval--;
+		
+#Stufe 2
+
+dez_input: integer;
+Input(dez_input);
+
+base_input: integer;
+Input(base_input);
+
+dual: integer[] = [];
+interval: integer = 0;
+
+hex_map: char[] = [A,B,C,D,E,F];
+
+while sum != 0
+	do 
+		dual[interval] = dez_input mod base_input;
+		dez_input = dez_input div base_input;
+		interval++;
+		
+while interval >= 0
+	do
+		temp: integer = dual[interval];
+		if(temp > 9)
+			then
+				Print(hex_map[temp - 10])
+			else
+				Print(dual[interval]);
+		
+		interval--;
