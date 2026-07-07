@@ -1,0 +1,6 @@
+# Was ist "künstliche Intelligenz"
+- KI ist der Überbegriff für Anwendungen, die menschenähnliche Intelligenzleistungen zu imitieren suchen
+- Merkmal: Lernfähigkeit (Machine Learning)
+- gemeint sind bspw. Algorithmen welche Muster verstehen und eigenständig
+- Schwache KI existiert bereits. Sie ist auf bestimmte Bereiche spezialisiert und fähig, konkret formulierte Aufgaben zu lösen. 
+- Starke KI hingegen existiert noch nicht. Sie wäre umfassend intelligent.

@@ -1,0 +1,12 @@
+# autonomes fahren
+## pro-kontra
+### pro
+- evt unfallvermeidung durch 100% einhalten aller verkehrsregeln
+- weniger stau durch smartes routing
+- 
+
+### kontra
+- ethik in dillemasituationen
+- erkennen von nicht-smart-verkehrteilnehmern (fußgänger, fahrräder, etc)
+- Datenschutz/Privatsphäre wäre nicht aufrechterhaltbar
+- Smart-Fahrzeuge können manipuliert/gecracked werden
