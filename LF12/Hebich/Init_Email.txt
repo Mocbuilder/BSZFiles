@@ -1,0 +1,21 @@
+# Initiale Email
+## Wichtige Infos
+Name: Meyer & Sohn Logistik GmbH
+Kontakt: Claudia Meyer (Geschäftsführerin)
+Zeichen: MSL-IT/2026-08
+Datum: 17.08.2026
+Betroffene Sektoren:
+- Netzwerk/Wlan
+- Datensicherung
+- Bestandssysteme
+
+Ziele:
+- Modernisierung
+- Prüfung auf Funktionalität
+- Erfüllung von aktuellen betrieblichen Anforderungen
+
+Anforderungen:
+- Fragebogen Vorab-Infos
+- Termin Bestandsaufnahme und Beratung
+- Angebot
+- Vor-Ort Termin
