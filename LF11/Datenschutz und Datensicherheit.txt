@@ -1,0 +1,22 @@
+# Datenschutz
+Keine unbefugte Datennutzung
+
+# Datensicherheit
+Schutz vor Verlusten
+Erhalt der Integrität
+
+# Maßnahmen
+
+##Technische (Bauliche, Hardware, Software)
+
+##Organisatorische
+
+###Datensicherheit
+- Sicherung:
+- Großvater, Vater, Sohn (drei Generationen an Backups)
+- 3-2-1-Regel (3 Kopien, 2 Speichermedien, 1 externer Standort) (3-2-1-0 0=auf fehler überprüft und keine gefunden = Notfallplantest/Prüfsummen/etc)
+
+Arten von Backups:
+- Vollsicherung
+- differienziell
+- inkrementell
