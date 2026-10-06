@@ -157,7 +157,7 @@ apt install -y curl build-essential git mosquitto mosquitto-clients
 3. **HTTPS / TLS Zertifikatserstellung:**  
    Anforderung der Let’s Encrypt Zertifikate via Certbot:
    ```bash
-   certbot --nginx -d nodered.ihk-lab.ipv64.net -d mqtt.ihk-lab.ipv64.net
+   certbot --nginx -d nodered.floeter.ipv64.net -d mosquitto.floeter.ipv64.net
    ```
 4. **Zertifikatsprüfung:**  
    Die generierten Dateien wurden unter `/etc/letsencrypt/live/<DOMAIN>/` verifiziert:
