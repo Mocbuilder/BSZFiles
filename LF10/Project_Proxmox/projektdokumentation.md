@@ -166,7 +166,7 @@ apt install -y curl build-essential git mosquitto mosquitto-clients
 
 ### 2.4 Cyberphysisches System (ESP32 / MicroPython)
 
-Auf dem ESP32-Microcontroller wurde ein MicroPython-Skript implementiert, das Sensorwerte liest, im JSON-Format strukturiert und periodisch an den Mosquitto-Broker übermittelt.
+An den ESP32-Microcontroller wurde ein DHT22-Sensor angeschlossen. Anschliesend wurde ein MicroPython-Skript implementiert, das Sensorwerte liest, im JSON-Format strukturiert und periodisch an den Mosquitto-Broker übermittelt.
 
 ```python
 from machine import Pin, ADC, SoftI2C
