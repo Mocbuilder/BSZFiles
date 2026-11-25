@@ -8,6 +8,7 @@ import sys
 import select
 import network
 import time
+import random
 from umqtt.simple import MQTTClient
 
 dht22_sensor = DHT22(Pin(19))
@@ -76,7 +77,8 @@ def get_sensors_results():
 
     dict_results = {
             "temperature": temp,
-            "humidity": humid
+            "humidity": round(hum, 2),
+            "fill": f"{random.uniform(0, 100):.2f}"
         }
     return dict_results
 

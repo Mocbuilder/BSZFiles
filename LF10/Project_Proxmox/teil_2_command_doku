@@ -43,3 +43,11 @@ FLUSH PRIVILEGES;
 
 CREATE DATABASE Prozessparameter
 USE Prozessparameter
+
+CREATE TABLE `Mischanlage` (
+  `ID` INT AUTO_INCREMENT PRIMARY KEY,
+  `Datum_Uhrzeit` DATETIME(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `Temperatur` DECIMAL(6,2),
+  `Luftfeuchtigkeit` DECIMAL(5,2),
+  `Fuellstand` DECIMAL(5,2)
+);
